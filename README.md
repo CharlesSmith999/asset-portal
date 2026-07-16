@@ -40,6 +40,7 @@ An email cannot see portal data unless it has been added by the administrator. A
 - Database sharing migration: [supabase/migrations/20260714_family_asset_sharing.sql](supabase/migrations/20260714_family_asset_sharing.sql).
 - Core-flow and ownership migration: [supabase/migrations/20260715_complete_core_flows.sql](supabase/migrations/20260715_complete_core_flows.sql).
 - Net-worth history migration: [supabase/migrations/20260715_net_worth_history.sql](supabase/migrations/20260715_net_worth_history.sql).
+- Category-growth analytics migration: [supabase/migrations/20260715_category_growth_analytics.sql](supabase/migrations/20260715_category_growth_analytics.sql).
 - Product audit and completed-flow checklist: [PRODUCT_AUDIT.md](PRODUCT_AUDIT.md).
 
 The public Supabase URL and publishable key are configured in `index.html`. Do not place database passwords, service-role keys, or email-provider secrets in this repository or the browser.
@@ -54,8 +55,9 @@ To recreate the sharing setup in another Supabase project:
 2. Run the family-sharing migration in the Supabase SQL Editor.
 3. Run the core-flow and ownership migration in the Supabase SQL Editor.
 4. Run the net-worth history migration in the Supabase SQL Editor.
-5. Set the administrator’s `profiles.role` to `admin`.
-6. Configure Supabase Auth email redirects for the deployed portal URL.
+5. Run the category-growth analytics migration in the Supabase SQL Editor.
+6. Set the administrator’s `profiles.role` to `admin`.
+7. Configure Supabase Auth email redirects for the deployed portal URL.
 
 The second migration assigns any existing liability or installment rows to the first administrator profile. Review this before running it if the database already contains multiple users.
 
